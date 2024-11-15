@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;700;900&display=swap');
+
+/* Estilos básicos para a página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #F5F5DC; /* Beige Claro (off-white) */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Container principal que envolve o conteúdo */
+.container {
+    display: flex; /* Flexbox para alinhar os cards */
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+/* Estilo de cada card */
+.card {
+    background-color: #A67C52; /* Marrom Claro (Light Brown) */
+    border: 1px solid #8B5A2B; /* Marrom mais escuro */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 0 0 300px; /* Garante a largura mínima de 300px */
+    max-width: 300px;
+}
+
+/* Título dentro dos cards */
+.card h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: black; 
+}
+
+/* Texto dentro dos cards */
+.card p {
+    color: black; 
+}
+
+/* Menu de navegação */
+nav {
+    background-color: #5B3A29; /* Marrom Escuro */
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff; /* Branco para o texto */
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #D1B28A; /* Bege Amarelado (destaque) */
+}
+
+/* Dropdown */
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #C1A68D; /* Areia (Light Brownish Beige) */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width: 160px;
+    padding: 0;
+}
+
+nav ul li .dropdown-content li {
+    margin: 0;
+}
+
+nav ul li .dropdown-content li a {
+    padding: 10px 15px;
+}
+
+nav ul li .dropdown-content li a:hover {
+    background-color: #E2CFC4; /* Cor de fundo do submenu */
+}
+
+nav ul li:hover .dropdown-content {
+    display: block; /* Exibe o dropdown */
+}
+
+/* Slider */
+.slider {
+    position: relative;
+    width: 100%;
+    max-height: 400px; /* Limita a altura do slider */
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+/* Animação do slider */
+@keyframes slider {
+    0% { transform: translateX(0); }
+    33.33% { transform: translateX(-100%); }
+    66.66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+}
+
+.slides {
+    animation: slider 9s infinite;
+}
+
+/* Estilo do conteúdo de cada seção */
+#home, #sobre, #servicos {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+#home h1, #sobre h1, #servicos h1 {
+    background-color: #6E4B3A; /* Marrom Escuro */
+    color: #fff; /* Títulos em branco para destaque */
+}
+
+/* Imagem centralizada */
+img {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    border-radius: 10px;
+    border: 4px solid #D1B28A; /* Borda em tom de bege (destaque) */
+}
+
+/* Footer */
+footer {
+    background-color: #5B3A29; /* Marrom Escuro */
+    padding: 40px 20px;
+    color: #fff;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-section h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #D1B28A; /* Títulos em um tom dourado-amarelado */
+}
+
+.footer-section p, .footer-section a {
+    color: #ddd; /* Cor suave para links e parágrafos */
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #FFD700; /* Dourado para o hover */
+}
+
+/* Redes sociais */
+.social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #ddd;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #FFD700; /* Dourado para o hover */
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #ddd;
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%; /* Faz com que os cards fiquem menores em telas pequenas */
+    }
+}
